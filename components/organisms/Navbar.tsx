@@ -7,7 +7,6 @@ import { NavItem } from '../molecules/NavItem';
 import { AnimatedButton } from '../atoms/AnimatedButton';
 import { Icon } from '../atoms/Icon';
 import { motion, AnimatePresence } from 'framer-motion';
-import { navbarScroll, navbarScrollDark } from '@/lib/animations';
 
 interface NavbarProps {
   className?: string;
@@ -16,6 +15,7 @@ interface NavbarProps {
 export function Navbar({ className }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   // Navigation items
   const navItems = [
@@ -51,8 +51,13 @@ export function Navbar({ className }: NavbarProps) {
     };
   }, []);
 
+  // Set hasAnimated to true after initial render
+  useEffect(() => {
+    setHasAnimated(true);
+  }, []);
+
   return (
-    <motion.header
+    <header
       className={cn(
         // Base styles
         'fixed top-0 w-full z-50',
@@ -63,76 +68,52 @@ export function Navbar({ className }: NavbarProps) {
         // Border - visible only when scrolled
         scrolled ? 'border-b border-night-300/20 dark:border-night-400/20' : '',
         
+        // Dynamic height and background based on scroll
+        scrolled ? 'h-16' : 'h-20',
+        scrolled ? 'bg-night-400/70' : 'bg-night-400/50',
+        
+        // Transition for smooth height and background changes
+        'transition-all duration-300',
+        
         className
       )}
-      initial="initial"
-      animate={scrolled ? "scrolled" : "initial"}
-      variants={{
-        initial: {
-          height: '5rem',
-          backgroundColor: 'rgba(0, 15, 8, 0.5)',
-          boxShadow: 'none',
-        },
-        scrolled: {
-          height: '4rem',
-          backgroundColor: 'rgba(0, 15, 8, 0.7)',
-          boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12)',
-        },
-      }}
-      transition={{ duration: 0.3 }}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex justify-between items-center h-full">
           {/* Logo */}
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div>
             <Logo variant="light" />
-          </motion.div>
+          </div>
           
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            {navItems.map((item, index) => (
-              <motion.div
-                key={item.label}
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.1 * index }}
-              >
+            {navItems.map((item) => (
+              <div key={item.label}>
                 <NavItem
                   label={item.label}
                   href={item.href}
                   dropdown={item.dropdown}
                   className="text-mint_cream-500 hover:text-mint_cream-300"
                 />
-              </motion.div>
+              </div>
             ))}
           </nav>
           
           {/* CTA Button - Desktop */}
-          <motion.div
-            className="hidden md:block"
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
+          <div className="hidden md:block">
             <AnimatedButton variant="primary" href="/contact">
               Contact Us
             </AnimatedButton>
-          </motion.div>
+          </div>
           
           {/* Mobile Menu Button */}
-          <motion.button
-            className="md:hidden p-2 rounded-md text-mint_cream-500"
+          <button
+            className="md:hidden p-2 rounded-md text-mint_cream-500 hover:bg-night-300/20 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             <Icon name={mobileMenuOpen ? "close" : "menu"} />
-          </motion.button>
+          </button>
         </div>
       </div>
       
@@ -147,27 +128,9 @@ export function Navbar({ className }: NavbarProps) {
             transition={{ duration: 0.3 }}
           >
             <div className="container mx-auto px-4 py-4">
-              <motion.nav
-                className="flex flex-col space-y-4"
-                initial="initial"
-                animate="animate"
-                variants={{
-                  initial: {},
-                  animate: {
-                    transition: {
-                      staggerChildren: 0.1
-                    }
-                  }
-                }}
-              >
+              <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <motion.div
-                    key={item.label}
-                    variants={{
-                      initial: { opacity: 0, x: -20 },
-                      animate: { opacity: 1, x: 0 }
-                    }}
-                  >
+                  <div key={item.label}>
                     <NavItem
                       label={item.label}
                       href={item.href}
@@ -175,23 +138,18 @@ export function Navbar({ className }: NavbarProps) {
                       mobile
                       className="text-mint_cream-500 hover:text-mint_cream-300"
                     />
-                  </motion.div>
+                  </div>
                 ))}
-              </motion.nav>
-              <motion.div
-                className="mt-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-              >
+              </nav>
+              <div className="mt-6">
                 <AnimatedButton variant="primary" href="/contact" fullWidth>
                   Contact Us
                 </AnimatedButton>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   );
 }
