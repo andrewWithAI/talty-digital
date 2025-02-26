@@ -53,6 +53,31 @@
   - Created "What We Offer" sections with feature cards
   - Added CTA sections to encourage user engagement
 
+**February 26, 2025 (latest)**
+- Updated service icons to use react-icons library:
+  - Installed react-icons package
+  - Refactored ServiceCard component to use react-icons instead of custom SVG icons
+  - Created a unified ServiceCard component that supports both animated and non-animated versions
+  - Updated AnimatedServiceCard to use the unified ServiceCard with animated=true
+  - Updated services data in both home page and services page to use consistent icons
+  - Made ServicesOverview component use the unified ServiceCard component
+  - Ensured consistent icon usage across all service cards
+
+**February 26, 2025 (current)**
+- Restructured project architecture:
+  - Moved Next.js frontend to dedicated frontend/ directory
+  - Added functions/ directory for cloud functions
+  - Updated project configuration files
+  - Updated Memory Bank documentation to reflect new structure
+
+**February 26, 2025 (latest)**
+- Fixed import path issues after project restructuring:
+  - Created a script (fix-imports.js) to automate the process
+  - Updated all import paths from `@/frontend/lib/...` to `@/lib/...`
+  - Updated all import paths from `@/frontend/components/...` to `@/components/...`
+  - Fixed Turbo Pack error by removing the `--turbopack` flag from the dev script
+  - Verified the fix by running the development server and confirming the website works correctly
+
 ## Next Steps
 1. **Project Setup**
    - [x] Define project architecture based on Next.js framework

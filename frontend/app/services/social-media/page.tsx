@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Typography } from '@/components/atoms/Typography';
-import { Button } from '@/components/atoms/Button';
-import { Icon } from '@/components/atoms/Icon';
+import { Typography } from '@/frontend/components/atoms/Typography';
+import { Button } from '@/frontend/components/atoms/Button';
+import { Icon } from '@/frontend/components/atoms/Icon';
 import Link from 'next/link';
 
 export default function SocialMediaPage() {

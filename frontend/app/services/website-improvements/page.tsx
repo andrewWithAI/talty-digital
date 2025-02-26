@@ -1,43 +1,43 @@
 'use client';
 
 import React from 'react';
-import { Typography } from '@/components/atoms/Typography';
-import { Button } from '@/components/atoms/Button';
-import { Icon } from '@/components/atoms/Icon';
+import { Typography } from '@/frontend/components/atoms/Typography';
+import { Button } from '@/frontend/components/atoms/Button';
+import { Icon } from '@/frontend/components/atoms/Icon';
 import Link from 'next/link';
 
-export default function BrandedImagesPage() {
+export default function WebsiteImprovementsPage() {
   // Features of the service
   const features = [
     {
-      title: "Logo Design",
-      description: "Professional logo design that represents your brand identity.",
-      icon: "image"
-    },
-    {
-      title: "Social Media Graphics",
-      description: "Eye-catching graphics optimized for various social platforms.",
-      icon: "mail"
-    },
-    {
-      title: "Website Imagery",
-      description: "High-quality images that enhance your website's visual appeal.",
-      icon: "globe"
-    },
-    {
-      title: "Marketing Materials",
-      description: "Branded materials for digital and print marketing campaigns.",
-      icon: "file"
-    },
-    {
-      title: "Brand Style Guides",
-      description: "Comprehensive guides to ensure brand consistency.",
+      title: "Performance Optimization",
+      description: "Speed up your website for better user experience and SEO rankings.",
       icon: "settings"
     },
     {
-      title: "Custom Illustrations",
-      description: "Unique illustrations that bring your brand story to life.",
+      title: "Responsive Design",
+      description: "Ensure your website works perfectly on all devices and screen sizes.",
       icon: "phone"
+    },
+    {
+      title: "UX Improvements",
+      description: "Enhance user experience to increase engagement and conversions.",
+      icon: "globe"
+    },
+    {
+      title: "SEO Enhancements",
+      description: "Optimize your website to rank higher in search engine results.",
+      icon: "search"
+    },
+    {
+      title: "Security Updates",
+      description: "Protect your website from vulnerabilities and security threats.",
+      icon: "file"
+    },
+    {
+      title: "Analytics Integration",
+      description: "Implement tracking to gain insights into user behavior.",
+      icon: "image"
     }
   ];
 
@@ -58,14 +58,14 @@ export default function BrandedImagesPage() {
             variant="h1" 
             className="mb-4 text-night-600 dark:text-mint_cream-500"
           >
-            Branded Images
+            Website Improvements
           </Typography>
           <Typography 
             variant="body-large" 
             className="max-w-3xl text-davys_gray-400 dark:text-mint_cream-300"
           >
-            Professional branded images and graphics that align with your brand identity. 
-            We create visually appealing graphics that help you stand out from the competition.
+            Enhance your existing website with modern features, better performance, and improved UX. 
+            We optimize your website to provide a better user experience and increase conversions.
           </Typography>
         </div>
 
@@ -76,22 +76,21 @@ export default function BrandedImagesPage() {
               Our Approach
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              In today's visual-centric digital landscape, high-quality branded images are essential 
-              for making a strong impression and communicating your brand's message effectively. 
-              From your website and social media to marketing materials and presentations, consistent 
-              and professional imagery helps build brand recognition and trust.
+              Is your website not performing as well as you'd like? Perhaps it's loading slowly, 
+              not ranking well in search results, or not converting visitors into customers. 
+              These are common issues that can significantly impact your business's online success.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              At Talty Digital, we understand the power of visual communication. Our approach to 
-              creating branded images begins with understanding your brand identity, values, and 
-              target audience. We then develop a visual strategy that aligns with these elements 
-              and creates a cohesive look and feel across all your digital and print materials.
+              At Talty Digital, we specialize in website improvements that address these issues and more. 
+              Our process begins with a comprehensive audit of your existing website to identify areas for 
+              improvement. We look at factors such as page load speed, mobile responsiveness, user experience, 
+              search engine optimization, and security.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              Our team of experienced designers combines creativity with strategic thinking to 
-              create images that not only look great but also serve your business objectives. 
-              Whether you need a complete visual identity system or specific graphics for a 
-              campaign, we have the expertise to deliver high-quality results that make an impact.
+              Based on our findings, we develop a customized improvement plan that prioritizes changes 
+              that will have the biggest impact on your business goals. Our team of experienced developers 
+              then implements these improvements, ensuring that your website not only looks better but also 
+              performs better.
             </Typography>
           </div>
           <div className="bg-mint_cream-500 dark:bg-gunmetal-400 p-6 rounded-lg border border-cadet_gray-200 dark:border-cadet_gray-700 h-fit">
@@ -102,31 +101,31 @@ export default function BrandedImagesPage() {
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Experienced design professionals
+                  Comprehensive website audits
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Strategic approach to visual communication
+                  Data-driven improvement recommendations
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Consistent brand representation across platforms
+                  Experienced development team
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  High-quality, professional results
+                  Focus on measurable results
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Flexible solutions for businesses of all sizes
+                  Ongoing support and maintenance
                 </Typography>
               </li>
             </ul>
@@ -161,11 +160,11 @@ export default function BrandedImagesPage() {
         {/* CTA Section */}
         <div className="bg-night-400 text-mint_cream-500 rounded-lg p-8 text-center">
           <Typography variant="h3" className="mb-4">
-            Ready to Elevate Your Brand's Visual Identity?
+            Ready to Improve Your Website?
           </Typography>
           <Typography variant="body" className="mb-6 max-w-2xl mx-auto">
-            Contact us today to discuss how our branded images services can help you create 
-            a strong visual presence that resonates with your audience and strengthens your brand.
+            Contact us today to discuss how we can enhance your existing website to better 
+            serve your business goals and provide a better experience for your users.
           </Typography>
           <Link href="/contact">
             <Button variant="primary" size="large">

@@ -1,43 +1,43 @@
 'use client';
 
 import React from 'react';
-import { Typography } from '@/components/atoms/Typography';
-import { Button } from '@/components/atoms/Button';
-import { Icon } from '@/components/atoms/Icon';
+import { Typography } from '@/frontend/components/atoms/Typography';
+import { Button } from '@/frontend/components/atoms/Button';
+import { Icon } from '@/frontend/components/atoms/Icon';
 import Link from 'next/link';
 
-export default function WebsiteCreationPage() {
+export default function CrmAdministrationPage() {
   // Features of the service
   const features = [
     {
-      title: "Custom Design",
-      description: "Unique designs tailored to your brand identity and business goals.",
-      icon: "image"
-    },
-    {
-      title: "Responsive Development",
-      description: "Websites that look and function perfectly on all devices and screen sizes.",
-      icon: "phone"
-    },
-    {
-      title: "SEO Optimization",
-      description: "Built-in search engine optimization to help your site rank higher.",
-      icon: "search"
-    },
-    {
-      title: "Content Management",
-      description: "Easy-to-use content management systems so you can update your site.",
-      icon: "file"
-    },
-    {
-      title: "Performance Focused",
-      description: "Fast-loading pages that provide an excellent user experience.",
+      title: "CRM Setup",
+      description: "Complete setup and configuration of your CRM system.",
       icon: "settings"
     },
     {
-      title: "Ongoing Support",
-      description: "Continued maintenance and support to keep your website running smoothly.",
+      title: "Data Migration",
+      description: "Seamless migration of your existing customer data.",
+      icon: "file"
+    },
+    {
+      title: "User Training",
+      description: "Comprehensive training for your team on CRM usage.",
+      icon: "globe"
+    },
+    {
+      title: "Workflow Automation",
+      description: "Automate repetitive tasks and streamline processes.",
       icon: "mail"
+    },
+    {
+      title: "Custom Reporting",
+      description: "Create custom reports to track key metrics and KPIs.",
+      icon: "search"
+    },
+    {
+      title: "Ongoing Support",
+      description: "Continuous support and optimization of your CRM system.",
+      icon: "phone"
     }
   ];
 
@@ -58,14 +58,14 @@ export default function WebsiteCreationPage() {
             variant="h1" 
             className="mb-4 text-night-600 dark:text-mint_cream-500"
           >
-            Website Creation & Management
+            CRM Administration
           </Typography>
           <Typography 
             variant="body-large" 
             className="max-w-3xl text-davys_gray-400 dark:text-mint_cream-300"
           >
-            Custom website design and development tailored to your brand and business needs. 
-            We create responsive, user-friendly websites that help you achieve your business goals.
+            Efficient customer relationship management setup and administration. 
+            We help you manage your customer relationships effectively to improve customer satisfaction and loyalty.
           </Typography>
         </div>
 
@@ -76,20 +76,22 @@ export default function WebsiteCreationPage() {
               Our Approach
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              At Talty Digital, we believe that your website is the digital storefront of your business. 
-              It's often the first impression potential customers have of your brand, which is why we take 
-              a strategic approach to website creation.
+              A well-implemented Customer Relationship Management (CRM) system is essential for 
+              businesses looking to manage customer interactions effectively, streamline sales 
+              processes, and improve customer service. However, setting up and administering a 
+              CRM system can be complex and time-consuming.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              Our process begins with understanding your business, your goals, and your target audience. 
-              We then create a custom design that reflects your brand identity and appeals to your ideal customers. 
-              Our development team brings this design to life with clean, efficient code that ensures your 
-              website is fast, responsive, and user-friendly.
+              At Talty Digital, we take the hassle out of CRM administration. Our approach begins 
+              with understanding your business processes, customer journey, and specific needs. 
+              We then configure your CRM system to align with these requirements, ensuring that 
+              it supports your business goals and workflows.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              We also focus on search engine optimization (SEO) from the ground up, ensuring that your 
-              website is built to rank well in search results. This helps potential customers find you 
-              more easily, increasing your online visibility and driving more traffic to your site.
+              Whether you're implementing a new CRM system or looking to optimize an existing one, 
+              our team has the expertise to help. We specialize in popular CRM platforms such as 
+              Salesforce, HubSpot, and Zoho, and can provide end-to-end services from initial setup 
+              to ongoing administration and support.
             </Typography>
           </div>
           <div className="bg-mint_cream-500 dark:bg-gunmetal-400 p-6 rounded-lg border border-cadet_gray-200 dark:border-cadet_gray-700 h-fit">
@@ -100,31 +102,31 @@ export default function WebsiteCreationPage() {
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Experienced team of designers and developers
+                  Expertise in leading CRM platforms
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Custom solutions tailored to your specific needs
+                  Customized solutions tailored to your business needs
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Focus on user experience and conversion optimization
+                  Seamless data migration and integration
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  SEO-friendly development practices
+                  Comprehensive user training and documentation
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Ongoing support and maintenance
+                  Ongoing support and optimization
                 </Typography>
               </li>
             </ul>
@@ -159,11 +161,11 @@ export default function WebsiteCreationPage() {
         {/* CTA Section */}
         <div className="bg-night-400 text-mint_cream-500 rounded-lg p-8 text-center">
           <Typography variant="h3" className="mb-4">
-            Ready to Create Your Dream Website?
+            Ready to Optimize Your Customer Relationships?
           </Typography>
           <Typography variant="body" className="mb-6 max-w-2xl mx-auto">
-            Contact us today to discuss your website project. We'll work with you to create a 
-            website that not only looks great but also helps you achieve your business goals.
+            Contact us today to discuss how our CRM administration services can help you 
+            manage your customer relationships more effectively and drive business growth.
           </Typography>
           <Link href="/contact">
             <Button variant="primary" size="large">

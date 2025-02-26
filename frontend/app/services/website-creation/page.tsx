@@ -1,43 +1,43 @@
 'use client';
 
 import React from 'react';
-import { Typography } from '@/components/atoms/Typography';
-import { Button } from '@/components/atoms/Button';
-import { Icon } from '@/components/atoms/Icon';
+import { Typography } from '@/frontend/components/atoms/Typography';
+import { Button } from '@/frontend/components/atoms/Button';
+import { Icon } from '@/frontend/components/atoms/Icon';
 import Link from 'next/link';
 
-export default function AiSolutionsPage() {
+export default function WebsiteCreationPage() {
   // Features of the service
   const features = [
     {
-      title: "AI Integration",
-      description: "Seamlessly integrate AI technologies into your existing systems.",
-      icon: "settings"
+      title: "Custom Design",
+      description: "Unique designs tailored to your brand identity and business goals.",
+      icon: "image"
     },
     {
-      title: "Chatbot Development",
-      description: "Custom chatbots to enhance customer service and automate responses.",
-      icon: "mail"
+      title: "Responsive Development",
+      description: "Websites that look and function perfectly on all devices and screen sizes.",
+      icon: "phone"
     },
     {
-      title: "Data Analysis",
-      description: "AI-powered data analysis to uncover insights and trends.",
+      title: "SEO Optimization",
+      description: "Built-in search engine optimization to help your site rank higher.",
       icon: "search"
     },
     {
-      title: "Process Automation",
-      description: "Automate repetitive tasks to improve efficiency and reduce errors.",
+      title: "Content Management",
+      description: "Easy-to-use content management systems so you can update your site.",
       icon: "file"
     },
     {
-      title: "Predictive Analytics",
-      description: "Forecast trends and behaviors to make data-driven decisions.",
-      icon: "globe"
+      title: "Performance Focused",
+      description: "Fast-loading pages that provide an excellent user experience.",
+      icon: "settings"
     },
     {
-      title: "Custom AI Solutions",
-      description: "Tailored AI solutions designed for your specific business needs.",
-      icon: "image"
+      title: "Ongoing Support",
+      description: "Continued maintenance and support to keep your website running smoothly.",
+      icon: "mail"
     }
   ];
 
@@ -58,14 +58,14 @@ export default function AiSolutionsPage() {
             variant="h1" 
             className="mb-4 text-night-600 dark:text-mint_cream-500"
           >
-            AI Solutions
+            Website Creation & Management
           </Typography>
           <Typography 
             variant="body-large" 
             className="max-w-3xl text-davys_gray-400 dark:text-mint_cream-300"
           >
-            Leverage AI technologies to automate processes and gain valuable insights. 
-            We help you implement AI solutions that streamline your operations and drive business growth.
+            Custom website design and development tailored to your brand and business needs. 
+            We create responsive, user-friendly websites that help you achieve your business goals.
           </Typography>
         </div>
 
@@ -76,21 +76,20 @@ export default function AiSolutionsPage() {
               Our Approach
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              Artificial Intelligence (AI) is transforming the way businesses operate, providing 
-              unprecedented opportunities for automation, insight, and innovation. However, 
-              implementing AI solutions effectively requires specialized knowledge and expertise.
+              At Talty Digital, we believe that your website is the digital storefront of your business. 
+              It's often the first impression potential customers have of your brand, which is why we take 
+              a strategic approach to website creation.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              At Talty Digital, we make AI accessible and practical for businesses of all sizes. 
-              Our approach begins with understanding your business challenges and identifying 
-              opportunities where AI can provide the most value. We then develop and implement 
-              custom AI solutions that address these specific needs.
+              Our process begins with understanding your business, your goals, and your target audience. 
+              We then create a custom design that reflects your brand identity and appeals to your ideal customers. 
+              Our development team brings this design to life with clean, efficient code that ensures your 
+              website is fast, responsive, and user-friendly.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              Whether you're looking to automate customer service with chatbots, gain insights 
-              from your data with machine learning, or streamline operations with process automation, 
-              our team has the expertise to help you leverage AI effectively. We focus on practical, 
-              results-driven solutions that deliver measurable business value.
+              We also focus on search engine optimization (SEO) from the ground up, ensuring that your 
+              website is built to rank well in search results. This helps potential customers find you 
+              more easily, increasing your online visibility and driving more traffic to your site.
             </Typography>
           </div>
           <div className="bg-mint_cream-500 dark:bg-gunmetal-400 p-6 rounded-lg border border-cadet_gray-200 dark:border-cadet_gray-700 h-fit">
@@ -101,31 +100,31 @@ export default function AiSolutionsPage() {
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Expertise in modern AI technologies
+                  Experienced team of designers and developers
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Custom solutions tailored to your business needs
+                  Custom solutions tailored to your specific needs
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Focus on practical, results-driven applications
+                  Focus on user experience and conversion optimization
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Seamless integration with existing systems
+                  SEO-friendly development practices
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Ongoing support and optimization
+                  Ongoing support and maintenance
                 </Typography>
               </li>
             </ul>
@@ -160,11 +159,11 @@ export default function AiSolutionsPage() {
         {/* CTA Section */}
         <div className="bg-night-400 text-mint_cream-500 rounded-lg p-8 text-center">
           <Typography variant="h3" className="mb-4">
-            Ready to Leverage AI for Your Business?
+            Ready to Create Your Dream Website?
           </Typography>
           <Typography variant="body" className="mb-6 max-w-2xl mx-auto">
-            Contact us today to discuss how our AI solutions can help you automate processes, 
-            gain valuable insights, and drive business growth.
+            Contact us today to discuss your website project. We'll work with you to create a 
+            website that not only looks great but also helps you achieve your business goals.
           </Typography>
           <Link href="/contact">
             <Button variant="primary" size="large">

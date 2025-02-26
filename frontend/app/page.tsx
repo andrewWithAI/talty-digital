@@ -17,13 +17,13 @@ export default function Home() {
     {
       title: "Social Media Planning",
       description: "Strategic social media planning and content creation to boost your online presence.",
-      icon: "mail",
+      icon: "users",
       link: "/services/social-media",
     },
     {
       title: "Website Improvements",
       description: "Enhance your existing website with modern features, better performance, and improved UX.",
-      icon: "chevronRight",
+      icon: "code",
       link: "/services/website-improvements",
     },
     {
@@ -35,7 +35,7 @@ export default function Home() {
     {
       title: "CRM Administration",
       description: "Efficient customer relationship management setup and administration.",
-      icon: "phone",
+      icon: "users",
       link: "/services/crm-administration",
     },
     {

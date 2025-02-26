@@ -211,3 +211,74 @@ Create a structured services section with a main services page and six individua
   - Call-to-action section encouraging contact
 - Used non-animated ServiceCard components for better performance
 - Ensured responsive design for all viewport sizes
+
+## February 26, 2025 - Icon System Refactoring
+
+**Context:**
+The website was using custom SVG icons defined directly in the Icon component, which limited scalability and made it difficult to maintain consistency across the site. Additionally, the services section on the home page and the services page were using different components (AnimatedServiceCard vs ServiceCard).
+
+**Decision:**
+Refactor the icon system to use the react-icons library and unify the ServiceCard components to ensure consistency between the home page and services page.
+
+**Rationale:**
+- react-icons provides a comprehensive set of popular icon libraries (FontAwesome, Material Design, etc.)
+- Using a standard icon library improves maintainability and consistency
+- A unified ServiceCard component reduces code duplication and ensures visual consistency
+- Proper icon selection enhances visual communication and user experience
+- Consistent icons across the site reinforce brand identity and improve usability
+
+**Implementation:**
+- Installed react-icons package
+- Created a unified ServiceCard component that supports both animated and non-animated versions
+- Updated the AnimatedServiceCard component to use the unified ServiceCard with animated=true
+- Replaced custom SVG icons with appropriate react-icons components
+- Updated services data in both home page and services page to use consistent icons
+- Modified the ServicesOverview component to use the unified ServiceCard
+- Ensured proper sizing and coloring of icons to match the design system
+
+## February 26, 2025 - Project Structure Reorganization
+
+**Context:**
+The project needed a clearer separation between frontend and backend components to improve maintainability and scalability. The initial structure had all Next.js frontend code at the root level, which would make it difficult to add backend functionality.
+
+**Decision:**
+Reorganize the project structure by moving the Next.js frontend to a dedicated frontend/ directory and adding a functions/ directory for cloud functions.
+
+**Rationale:**
+- Clear separation of concerns between frontend and backend code
+- Improved project organization and maintainability
+- Better scalability for future development
+- Easier management of dependencies for each part of the application
+- Follows industry best practices for monorepo-style project organization
+- Facilitates independent deployment of frontend and backend components
+
+**Implementation:**
+- Created a frontend/ directory and moved all Next.js code into it
+- Created a functions/ directory for cloud functions
+- Updated configuration files to reflect the new structure
+- Updated Memory Bank documentation to reflect the changes:
+  - Updated directoryStructure.md with the new project structure
+  - Modified systemPatterns.md to include the new architecture
+  - Updated productContext.md to include cloud functions in the technology stack
+  - Added the restructuring to activeContext.md and progress.md
+
+## February 26, 2025 - Import Path Fixes After Project Restructuring
+
+**Context:**
+After moving the Next.js frontend to a dedicated frontend/ directory, the import paths in the component files were broken. The imports were using `@/frontend/components/...` and `@/frontend/lib/...` paths, but the path alias `@/*` in tsconfig.json pointed to the current directory (frontend), so it should have been just `@/components/...` and `@/lib/...`.
+
+**Decision:**
+Fix all import paths in the component files to use the correct path aliases.
+
+**Rationale:**
+- Incorrect import paths were causing build errors and preventing the application from running
+- The path alias `@/*` in tsconfig.json was correctly configured to point to the current directory (frontend)
+- Consistent import paths improve code maintainability and readability
+- Automated approach ensures all files are updated correctly
+
+**Implementation:**
+- Created a script (fix-imports.js) to automate the process of fixing import paths
+- The script scanned all TypeScript files in the components directory
+- Updated all import paths from `@/frontend/lib/...` to `@/lib/...`
+- Updated all import paths from `@/frontend/components/...` to `@/components/...`
+- Verified the fix by running the development server and confirming the website works correctly

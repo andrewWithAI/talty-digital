@@ -3,7 +3,7 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { Typography } from '../atoms/Typography';
-import { AnimatedServiceCard } from '../molecules/AnimatedServiceCard';
+import { ServiceCard } from '../molecules/ServiceCard';
 import { AnimatedButton } from '../atoms/AnimatedButton';
 import { AnimatedSection, AnimatedItem } from '../atoms/AnimatedSection';
 
@@ -59,11 +59,12 @@ export function ServicesOverview({
               animation="scale"
               delay={index * 0.1}
             >
-              <AnimatedServiceCard
+              <ServiceCard
                 title={service.title}
                 description={service.description}
                 icon={service.icon}
                 link={service.link}
+                animated={true}
               />
             </AnimatedItem>
           ))}

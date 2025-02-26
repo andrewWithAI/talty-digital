@@ -4,26 +4,32 @@ This document outlines the architectural patterns, coding standards, and design 
 
 ## Architecture Patterns
 
-### Next.js App Router Structure
-- Use the App Router pattern for routing and layouts
+### Project Structure
+- Organize the project into separate directories for frontend and backend:
+  - `frontend/`: Next.js application
+  - `functions/`: Cloud functions
+- Use the App Router pattern for routing and layouts in the frontend
 - Implement server components where appropriate for improved performance
 - Utilize client components for interactive elements
 - Follow the recommended folder structure:
   ```
-  app/
-    layout.tsx       # Root layout
-    page.tsx         # Home page
-    globals.css      # Global styles
-    services/        # Service pages
-      layout.tsx     # Services layout
-      page.tsx       # Services index
-      [service]/     # Dynamic service pages
-        page.tsx     # Individual service page
-    blog/            # Blog section
-      layout.tsx     # Blog layout
-      page.tsx       # Blog index
-      [slug]/        # Dynamic blog posts
-        page.tsx     # Individual blog post
+  frontend/
+    app/
+      layout.tsx       # Root layout
+      page.tsx         # Home page
+      globals.css      # Global styles
+      services/        # Service pages
+        layout.tsx     # Services layout
+        page.tsx       # Services index
+        [service]/     # Dynamic service pages
+          page.tsx     # Individual service page
+      blog/            # Blog section
+        layout.tsx     # Blog layout
+        page.tsx       # Blog index
+        [slug]/        # Dynamic blog posts
+          page.tsx     # Individual blog post
+  functions/
+    # Cloud functions for backend processing
   ```
 
 ### Component Architecture

@@ -18,6 +18,7 @@ This is the Memory Bank for the Talty Digital LLC website project, a full-servic
 ## Technology Stack
 - **Frontend**: Next.js (React-based) with server-side rendering and dynamic routing
 - **UI Components**: ShadCN components for bootstrapping the project
+- **Backend**: Cloud Functions for serverless backend processing
 - **Infrastructure**: Google Cloud Platform for hosting and scalability
 - **Additional Technologies**: To be determined based on specific requirements (headless CMS, databases, analytics)
 

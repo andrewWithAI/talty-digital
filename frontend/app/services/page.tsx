@@ -1,9 +1,9 @@
 'use client';
 
 import React from 'react';
-import { Typography } from '@/components/atoms/Typography';
-import { ServiceCard } from '@/components/molecules/ServiceCard';
-import { Button } from '@/components/atoms/Button';
+import { Typography } from '@/frontend/components/atoms/Typography';
+import { ServiceCard } from '@/frontend/components/molecules/ServiceCard';
+import { Button } from '@/frontend/components/atoms/Button';
 import Link from 'next/link';
 
 export default function ServicesPage() {
@@ -18,13 +18,13 @@ export default function ServicesPage() {
     {
       title: "Social Media Planning",
       description: "Strategic social media planning and content creation to boost your online presence. We help you connect with your audience and build a strong social media presence.",
-      icon: "mail",
+      icon: "users",
       link: "/services/social-media",
     },
     {
       title: "Website Improvements",
       description: "Enhance your existing website with modern features, better performance, and improved UX. We optimize your website to provide a better user experience and increase conversions.",
-      icon: "chevronRight",
+      icon: "code",
       link: "/services/website-improvements",
     },
     {
@@ -36,7 +36,7 @@ export default function ServicesPage() {
     {
       title: "CRM Administration",
       description: "Efficient customer relationship management setup and administration. We help you manage your customer relationships effectively to improve customer satisfaction and loyalty.",
-      icon: "phone",
+      icon: "users",
       link: "/services/crm-administration",
     },
     {

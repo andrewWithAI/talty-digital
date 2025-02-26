@@ -1,43 +1,43 @@
 'use client';
 
 import React from 'react';
-import { Typography } from '@/components/atoms/Typography';
-import { Button } from '@/components/atoms/Button';
-import { Icon } from '@/components/atoms/Icon';
+import { Typography } from '@/frontend/components/atoms/Typography';
+import { Button } from '@/frontend/components/atoms/Button';
+import { Icon } from '@/frontend/components/atoms/Icon';
 import Link from 'next/link';
 
-export default function CrmAdministrationPage() {
+export default function AiSolutionsPage() {
   // Features of the service
   const features = [
     {
-      title: "CRM Setup",
-      description: "Complete setup and configuration of your CRM system.",
+      title: "AI Integration",
+      description: "Seamlessly integrate AI technologies into your existing systems.",
       icon: "settings"
     },
     {
-      title: "Data Migration",
-      description: "Seamless migration of your existing customer data.",
-      icon: "file"
-    },
-    {
-      title: "User Training",
-      description: "Comprehensive training for your team on CRM usage.",
-      icon: "globe"
-    },
-    {
-      title: "Workflow Automation",
-      description: "Automate repetitive tasks and streamline processes.",
+      title: "Chatbot Development",
+      description: "Custom chatbots to enhance customer service and automate responses.",
       icon: "mail"
     },
     {
-      title: "Custom Reporting",
-      description: "Create custom reports to track key metrics and KPIs.",
+      title: "Data Analysis",
+      description: "AI-powered data analysis to uncover insights and trends.",
       icon: "search"
     },
     {
-      title: "Ongoing Support",
-      description: "Continuous support and optimization of your CRM system.",
-      icon: "phone"
+      title: "Process Automation",
+      description: "Automate repetitive tasks to improve efficiency and reduce errors.",
+      icon: "file"
+    },
+    {
+      title: "Predictive Analytics",
+      description: "Forecast trends and behaviors to make data-driven decisions.",
+      icon: "globe"
+    },
+    {
+      title: "Custom AI Solutions",
+      description: "Tailored AI solutions designed for your specific business needs.",
+      icon: "image"
     }
   ];
 
@@ -58,14 +58,14 @@ export default function CrmAdministrationPage() {
             variant="h1" 
             className="mb-4 text-night-600 dark:text-mint_cream-500"
           >
-            CRM Administration
+            AI Solutions
           </Typography>
           <Typography 
             variant="body-large" 
             className="max-w-3xl text-davys_gray-400 dark:text-mint_cream-300"
           >
-            Efficient customer relationship management setup and administration. 
-            We help you manage your customer relationships effectively to improve customer satisfaction and loyalty.
+            Leverage AI technologies to automate processes and gain valuable insights. 
+            We help you implement AI solutions that streamline your operations and drive business growth.
           </Typography>
         </div>
 
@@ -76,22 +76,21 @@ export default function CrmAdministrationPage() {
               Our Approach
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              A well-implemented Customer Relationship Management (CRM) system is essential for 
-              businesses looking to manage customer interactions effectively, streamline sales 
-              processes, and improve customer service. However, setting up and administering a 
-              CRM system can be complex and time-consuming.
+              Artificial Intelligence (AI) is transforming the way businesses operate, providing 
+              unprecedented opportunities for automation, insight, and innovation. However, 
+              implementing AI solutions effectively requires specialized knowledge and expertise.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              At Talty Digital, we take the hassle out of CRM administration. Our approach begins 
-              with understanding your business processes, customer journey, and specific needs. 
-              We then configure your CRM system to align with these requirements, ensuring that 
-              it supports your business goals and workflows.
+              At Talty Digital, we make AI accessible and practical for businesses of all sizes. 
+              Our approach begins with understanding your business challenges and identifying 
+              opportunities where AI can provide the most value. We then develop and implement 
+              custom AI solutions that address these specific needs.
             </Typography>
             <Typography variant="body" className="mb-6 text-davys_gray-400 dark:text-mint_cream-300">
-              Whether you're implementing a new CRM system or looking to optimize an existing one, 
-              our team has the expertise to help. We specialize in popular CRM platforms such as 
-              Salesforce, HubSpot, and Zoho, and can provide end-to-end services from initial setup 
-              to ongoing administration and support.
+              Whether you're looking to automate customer service with chatbots, gain insights 
+              from your data with machine learning, or streamline operations with process automation, 
+              our team has the expertise to help you leverage AI effectively. We focus on practical, 
+              results-driven solutions that deliver measurable business value.
             </Typography>
           </div>
           <div className="bg-mint_cream-500 dark:bg-gunmetal-400 p-6 rounded-lg border border-cadet_gray-200 dark:border-cadet_gray-700 h-fit">
@@ -102,25 +101,25 @@ export default function CrmAdministrationPage() {
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Expertise in leading CRM platforms
+                  Expertise in modern AI technologies
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Customized solutions tailored to your business needs
+                  Custom solutions tailored to your business needs
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Seamless data migration and integration
+                  Focus on practical, results-driven applications
                 </Typography>
               </li>
               <li className="flex items-start">
                 <Icon name="check" className="text-night-600 dark:text-night-700 mt-1 mr-2" />
                 <Typography variant="body" className="text-davys_gray-400 dark:text-mint_cream-300">
-                  Comprehensive user training and documentation
+                  Seamless integration with existing systems
                 </Typography>
               </li>
               <li className="flex items-start">
@@ -161,11 +160,11 @@ export default function CrmAdministrationPage() {
         {/* CTA Section */}
         <div className="bg-night-400 text-mint_cream-500 rounded-lg p-8 text-center">
           <Typography variant="h3" className="mb-4">
-            Ready to Optimize Your Customer Relationships?
+            Ready to Leverage AI for Your Business?
           </Typography>
           <Typography variant="body" className="mb-6 max-w-2xl mx-auto">
-            Contact us today to discuss how our CRM administration services can help you 
-            manage your customer relationships more effectively and drive business growth.
+            Contact us today to discuss how our AI solutions can help you automate processes, 
+            gain valuable insights, and drive business growth.
           </Typography>
           <Link href="/contact">
             <Button variant="primary" size="large">

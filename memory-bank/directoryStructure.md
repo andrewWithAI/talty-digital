@@ -6,40 +6,46 @@ This document outlines the recommended directory structure for the Talty Digital
 
 ```
 talty-digital/
-├── app/                      # Next.js App Router
-│   ├── layout.tsx            # Root layout with navbar and footer
-│   ├── page.tsx              # Homepage
-│   ├── globals.css           # Global styles
-│   ├── services/             # Services section
-│   │   ├── layout.tsx        # Services layout
-│   │   ├── page.tsx          # Services index
-│   │   └── [service]/        # Dynamic service pages
-│   │       └── page.tsx      # Individual service page
-│   └── blog/                 # Blog section
-│       ├── layout.tsx        # Blog layout
-│       ├── page.tsx          # Blog index
-│       └── [slug]/           # Dynamic blog posts
-│           └── page.tsx      # Individual blog post
-├── components/               # Reusable components
-│   ├── atoms/                # Basic UI elements
-│   ├── molecules/            # Combinations of atoms
-│   ├── organisms/            # Complex UI sections
-│   └── templates/            # Page layout templates
-├── lib/                      # Utility functions and shared code
-│   ├── utils.ts              # General utilities
-│   ├── constants.ts          # Constants and configuration
-│   └── types.ts              # TypeScript type definitions
-├── public/                   # Static assets
-│   ├── images/               # Image assets
-│   ├── fonts/                # Font files (if not using Google Fonts)
-│   └── favicon.ico           # Favicon
-├── styles/                   # Style-related files
-│   └── theme.ts              # Theme configuration
+├── frontend/                 # Next.js frontend application
+│   ├── app/                  # Next.js App Router
+│   │   ├── layout.tsx        # Root layout with navbar and footer
+│   │   ├── page.tsx          # Homepage
+│   │   ├── globals.css       # Global styles
+│   │   ├── services/         # Services section
+│   │   │   ├── layout.tsx    # Services layout
+│   │   │   ├── page.tsx      # Services index
+│   │   │   └── [service]/    # Dynamic service pages
+│   │   │       └── page.tsx  # Individual service page
+│   │   └── blog/             # Blog section
+│   │       ├── layout.tsx    # Blog layout
+│   │       ├── page.tsx      # Blog index
+│   │       └── [slug]/       # Dynamic blog posts
+│   │           └── page.tsx  # Individual blog post
+│   ├── components/           # Reusable components
+│   │   ├── atoms/            # Basic UI elements
+│   │   ├── molecules/        # Combinations of atoms
+│   │   ├── organisms/        # Complex UI sections
+│   │   └── templates/        # Page layout templates
+│   ├── lib/                  # Utility functions and shared code
+│   │   ├── utils.ts          # General utilities
+│   │   ├── constants.ts      # Constants and configuration
+│   │   └── types.ts          # TypeScript type definitions
+│   ├── public/               # Static assets
+│   │   ├── images/           # Image assets
+│   │   ├── fonts/            # Font files (if not using Google Fonts)
+│   │   └── favicon.ico       # Favicon
+│   ├── next.config.ts        # Next.js configuration
+│   ├── tailwind.config.ts    # Tailwind CSS configuration
+│   ├── postcss.config.mjs    # PostCSS configuration
+│   ├── eslint.config.mjs     # ESLint configuration
+│   ├── package.json          # Frontend dependencies
+│   └── package-lock.json     # Frontend dependency lock file
+├── functions/                # Cloud functions
 ├── memory-bank/              # Project documentation
-├── next.config.js            # Next.js configuration
-├── tailwind.config.js        # Tailwind CSS configuration
-├── tsconfig.json             # TypeScript configuration
-└── package.json              # Project dependencies
+├── docs/                     # Additional documentation
+├── tsconfig.json             # Root TypeScript configuration
+├── .gitignore                # Git ignore file
+└── README.md                 # Project readme
 ```
 
 ## Component Directory Structure
@@ -47,29 +53,31 @@ talty-digital/
 ### Atoms
 
 ```
-components/atoms/
+frontend/components/atoms/
 ├── Button.tsx                # Button component
 ├── Input.tsx                 # Input field component
 ├── Logo.tsx                  # Logo component
 ├── Typography.tsx            # Typography components
-└── Icon.tsx                  # Icon component
+├── Icon.tsx                  # Icon component
+└── AnimatedButton.tsx        # Animated button component
 ```
 
 ### Molecules
 
 ```
-components/molecules/
+frontend/components/molecules/
 ├── NavItem.tsx               # Navigation item
 ├── ServiceCard.tsx           # Service card component
 ├── FormField.tsx             # Form field with label
 ├── SocialLinks.tsx           # Social media links group
+├── AnimatedServiceCard.tsx   # Animated service card component
 └── CallToAction.tsx          # Call to action component
 ```
 
 ### Organisms
 
 ```
-components/organisms/
+frontend/components/organisms/
 ├── Navbar.tsx                # Navigation bar with frosted glass effect
 ├── Footer.tsx                # Site footer
 ├── HeroSection.tsx           # Hero section for homepage
@@ -80,7 +88,7 @@ components/organisms/
 ### Templates
 
 ```
-components/templates/
+frontend/components/templates/
 ├── PageLayout.tsx            # Standard page layout template
 └── HomeTemplate.tsx          # Homepage-specific template
 ```
