@@ -5,6 +5,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  
+  /* Custom color variables */
+  --night: #000f08;
+  --gunmetal: #1c3738;
+  --davys-gray: #4d4847;
+  --mint-cream: #f4fff8;
+  --cadet-gray: #8baaad;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,5 +24,31 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .frosted-glass {
+    @apply bg-mint_cream-500/70 dark:bg-gunmetal-500/70 backdrop-blur-md;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-night-600 to-gunmetal-600 dark:from-night-700 dark:to-gunmetal-700 bg-clip-text text-transparent;
+  }
+}
+
+/* Custom component styles */
+@layer components {
+  .container {
+    @apply px-4 sm:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+  
+  .section {
+    @apply py-16 md:py-24;
+  }
+  
+  .card {
+    @apply bg-mint_cream-500 dark:bg-gunmetal-400 rounded-lg border border-cadet_gray-200 dark:border-cadet_gray-700 p-6 transition-all duration-200;
+  }
 }

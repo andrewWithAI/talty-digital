@@ -1,101 +1,82 @@
-import Image from "next/image";
+'use client';
+
+import { HeroSection } from "@/components/organisms/HeroSection";
+import { ServicesOverview } from "@/components/organisms/ServicesOverview";
+import { ContactForm } from "@/components/organisms/ContactForm";
+import { useEffect } from "react";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  // Services data
+  const services = [
+    {
+      title: "Website Creation & Management",
+      description: "Custom website design and development tailored to your brand and business needs.",
+      icon: "globe",
+      link: "/services/website-creation",
+    },
+    {
+      title: "Social Media Planning",
+      description: "Strategic social media planning and content creation to boost your online presence.",
+      icon: "mail",
+      link: "/services/social-media",
+    },
+    {
+      title: "Website Improvements",
+      description: "Enhance your existing website with modern features, better performance, and improved UX.",
+      icon: "chevronRight",
+      link: "/services/website-improvements",
+    },
+    {
+      title: "AI Solutions",
+      description: "Leverage AI technologies to automate processes and gain valuable insights.",
+      icon: "settings",
+      link: "/services/ai-solutions",
+    },
+    {
+      title: "CRM Administration",
+      description: "Efficient customer relationship management setup and administration.",
+      icon: "phone",
+      link: "/services/crm-administration",
+    },
+    {
+      title: "Branded Images",
+      description: "Professional branded images and graphics that align with your brand identity.",
+      icon: "image",
+      link: "/services/branded-images",
+    },
+  ];
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+  // Smooth scroll effect for the entire page
+  useEffect(() => {
+    // Add smooth scrolling to the document
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Clean up
+    return () => {
+      document.documentElement.style.scrollBehavior = '';
+    };
+  }, []);
+
+  return (
+    <>
+      <HeroSection
+        title="Elevate Your Digital Presence"
+        subtitle="Talty Digital LLC provides full-service web development and software engineering solutions to help businesses enhance their online presence and drive growth."
+        ctaText="Get Started"
+        ctaLink="/contact"
+      />
+      
+      <ServicesOverview
+        title="Our Services"
+        description="We offer a comprehensive range of digital services to help your business thrive online."
+        services={services}
+        showAllLink="/services"
+      />
+      
+      <ContactForm
+        title="Get In Touch"
+        description="Have a project in mind? Contact us to discuss how we can help you achieve your goals."
+      />
+    </>
   );
 }
