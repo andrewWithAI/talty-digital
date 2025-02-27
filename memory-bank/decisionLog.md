@@ -282,3 +282,41 @@ Fix all import paths in the component files to use the correct path aliases.
 - Updated all import paths from `@/frontend/lib/...` to `@/lib/...`
 - Updated all import paths from `@/frontend/components/...` to `@/components/...`
 - Verified the fix by running the development server and confirming the website works correctly
+
+## February 26, 2025 - Google Cloud Run Configuration with Database for Form Submissions
+
+**Context:**
+The project needs to be configured to run on Google Cloud Run with a database for storing form submissions. The functions directory is intended for serverless cloud functions, with a specific need for a form submission function.
+
+**Decision:**
+Implement a comprehensive Google Cloud Run configuration with Firestore database for form submissions, using Cloud Functions for serverless backend processing.
+
+**Rationale:**
+- Google Cloud Run provides a scalable, containerized environment for the Next.js frontend
+- Cloud Functions offer a serverless approach for backend processing, reducing operational overhead
+- Firestore provides a flexible, scalable NoSQL database solution for storing form submissions
+- This architecture aligns with the project's existing structure (frontend/ and functions/ directories)
+- Serverless architecture reduces costs by only charging for actual usage
+- The solution maintains a clear separation of concerns between frontend and backend
+
+**Implementation:**
+1. Configure the Next.js frontend for Cloud Run deployment:
+   - Create a Dockerfile for containerizing the Next.js application
+   - Set up Google Cloud Build for CI/CD pipeline
+   - Configure environment variables for production deployment
+
+2. Implement a form submission Cloud Function:
+   - Create a dedicated function for handling form submissions
+   - Set up Firestore database for storing submission data
+   - Implement proper validation and error handling
+   - Configure CORS to allow requests from the frontend
+
+3. Update the ContactForm component to use the Cloud Function:
+   - Modify the form submission logic to call the Cloud Function API
+   - Implement proper error handling and loading states
+   - Add success/failure feedback for users
+
+4. Set up proper authentication and security:
+   - Configure Firebase Authentication if user authentication is needed
+   - Implement proper security rules for Firestore
+   - Set up API keys and environment variables for secure communication

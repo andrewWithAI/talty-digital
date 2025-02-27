@@ -75,9 +75,19 @@ export function ContactForm({
     setIsSubmitting(true);
     
     try {
-      // In a real application, you would send the form data to your backend
-      // For now, we'll simulate a successful submission after a delay
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      const response = await fetch(process.env.NEXT_PUBLIC_FORM_API_URL || '/api/submitForm', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      
+      const result = await response.json();
+      
+      if (!result.success) {
+        throw new Error(result.error || 'Form submission failed');
+      }
       
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -88,6 +98,10 @@ export function ContactForm({
       }, 5000);
     } catch (error) {
       console.error('Error submitting form:', error);
+      setErrors((prev) => ({
+        ...prev,
+        form: 'Failed to submit the form. Please try again later.'
+      }));
     } finally {
       setIsSubmitting(false);
     }
@@ -135,6 +149,11 @@ export function ContactForm({
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit}>
+                {errors.form && (
+                  <div className="mb-6 p-4 bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800 rounded-md text-red-600 dark:text-red-400">
+                    <Typography variant="body-small">{errors.form}</Typography>
+                  </div>
+                )}
                 <AnimatedSection animation="stagger" staggerChildren={0.1}>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <AnimatedItem animation="fade" direction="left">
